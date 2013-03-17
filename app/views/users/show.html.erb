@@ -1,0 +1,10 @@
+<%= render :partial => 'layouts/nav_bar' %>
+
+
+<div class="container-fluid">
+  <h1>welcome</h1>
+
+  <p>This is where your user information will be displayed</p>
+   <%= render :partial => 'forms/rsvp_form', :locals => {:submission_path => new_user_path, :user => @user} %>
+</div>
+<%= render :partial => 'layouts/footer' %>
