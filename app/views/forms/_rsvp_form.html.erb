@@ -1,6 +1,11 @@
 <%= semantic_form_for @user do |f| %>
   <%= f.inputs :first_name %>
   <%= f.inputs :last_name %>
+  <%= f.inputs :party_size %>
   <%= f.inputs :email %>
+  <%= f.inputs :mailing_address %>
+  <%= f.inputs :city %>
+  <%= f.inputs :state %>
+  <%= f.inputs :zip %>
   <%= f.actions :submit, :cancel %>
 <% end %>

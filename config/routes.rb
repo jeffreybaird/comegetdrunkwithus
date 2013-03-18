@@ -5,7 +5,6 @@ Rsvp::Application.routes.draw do
 
   # Sample of regular route:
   match '/'          => 'home#show'
-  match '/users'     => 'users#show'
   match '/home'      => 'home#show'
   match '/about-us'  => 'about_us#show'
   match '/rsvps'     => 'rsvps#show'
