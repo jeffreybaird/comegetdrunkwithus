@@ -1,5 +1,5 @@
 class Party < ActiveRecord::Base
-  attr_accessible :id, :party_name, :mailing_address, :city, :state, :zip, :reservation_id, :party_size
+  attr_accessible :id, :party_name, :mailing_address, :city, :state, :zip, :reservation_id, :party_size, :invitation_id
 
   belongs_to :reservation
   accepts_nested_attributes_for :reservation
