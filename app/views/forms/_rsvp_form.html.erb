@@ -1,11 +1,16 @@
 <%= semantic_form_for @user do |f| %>
-  <%= f.inputs :first_name %>
-  <%= f.inputs :last_name %>
-  <%= f.inputs :party_size %>
-  <%= f.inputs :email %>
-  <%= f.inputs :mailing_address %>
-  <%= f.inputs :city %>
-  <%= f.inputs :state %>
-  <%= f.inputs :zip %>
-  <%= f.actions :submit, :cancel %>
+  <%= f.inputs :class => 'form-horizontal' do %>
+    <%= f.input :first_name, :placeholder=>"First Name" %>
+    <%= f.input :last_name %>
+    <%= f.input :party_size %>
+    <%= f.input :email %>
+    <%= f.input :mailing_address %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.action :submit, :html => {:class => 'btn btn-success'} %>
+    <%= f.action :cancel, :html => {:class => 'btn'} %>
+  <% end %>
 <% end %>
