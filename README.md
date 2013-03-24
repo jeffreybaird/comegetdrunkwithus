@@ -5,7 +5,7 @@
 - Invitation Management
   1. Upload invite list
   2. Manage Contacts
-  3. Send out Save the date/E-invites
+  3. Send out Save the date/E-invitesx
 
 - RSVP Management
   1. Guests can RSVP on the website

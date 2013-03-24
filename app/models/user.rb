@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => {:message => 'Please enter your last name'}
   validates :email, :presence => {:message => 'Please enter your email'}
 
-  delegate :mailing_address, :city, :state, :zip, :party_size, :invitation_id, :to => :party
+  delegate :mailing_address, :city, :state, :zip, :party_size, :invitation_id,:rsvp, :message, :to => :party
 
   before_save :check_for_invitation
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318025746) do
+ActiveRecord::Schema.define(:version => 20130324022001) do
 
   create_table "invitations", :force => true do |t|
     t.string   "first_name"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(:version => 20130318025746) do
     t.string   "zip"
     t.integer  "reservation_id"
     t.integer  "invitation_id"
+    t.boolean  "rsvp"
+    t.string   "message"
   end
 
   create_table "reservations", :force => true do |t|

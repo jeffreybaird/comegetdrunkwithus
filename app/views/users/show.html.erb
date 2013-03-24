@@ -1,14 +1,79 @@
+
 <%= render :partial => 'layouts/nav_bar' %>
-
-
-<div class="container-fluid">
-
-  <h1>RSVP Here</h1>
-
-  <p>Fill this out in order to complete your RSVP</p>
-
-   <%= render :partial => 'forms/rsvp_form', :locals => {:submission_path => new_users_path, :user => @user} %>
-
+<div class="textBox rsvp">
+  <div class="page-header">
+    <h1><small>r&eacute;pondez s'il vous pla&icirc;t</small> RSVP</h1>
+  </div>
+  <div class="row">
+    <div class="span8 offset2 rsvpUncenter">
+      <p>Please let us know if you can make it! We'd obviously love to have everyone we invite come, but we also want to make sure we have a seat set for you, so let us know if you're coming!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span8 offset2">
+  <form method="post" submission_path=new_users_path class="">
+        <div class="row">
+        <fieldset>
+          <div class="control-group span4">
+            <div class="row">
+              <label class="control-label" for="full_name"><strong>Full Name:</strong></label>
+            </div>
+            <div class="controls">
+              <input type="text" class="span2" name="first_name" id="first_name" required>
+              <input type="text" class="span2" name="last_name" id="last_name" required>
+            </div>
+          </div>
+          <div class="control-group span4">
+            <label class="control-label" for="email"><strong>Email:</strong></label>
+            <div class="controls">
+              <input type="text" class="span4" name="email" id="email" required>
+            </div>
+          </div>
+          <div class="span4">
+          <div class="control-group">
+            <label class="control-label"><strong>Will You Be Coming?</strong></label>
+            <div class="controls centered">
+              <label class="radio">
+                <input type="radio" name="rsvp" id="rsvpYes" value=true checked>
+                Yes, I can't wait!
+              </label>
+              <label class="radio">
+                <input type="radio" name="rsvp" id="rsvpNo" value=false>
+                No, and I'm sooo sad!
+              </label>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="party_size"><strong>If yes, how many will be in your party?</strong></label>
+            <div class="controls">
+              <select id="number" name="party_size">
+                <option>select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          <div class="control-group span4">
+            <label class="control-label" for="message"><strong>Message for the happy couple:</strong></label>
+            <div class="controls">
+              <textarea id="message" name="message" class="span4" rows="6"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn">RSVP</button>
+        </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-
 <%= render :partial => 'layouts/footer' %>
+
