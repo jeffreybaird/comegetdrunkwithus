@@ -4,8 +4,6 @@ common: &common
   password:
   host: localhost
   reconnect: true
-  min_messages: warning
-  prepared_statements: false
 
 development:
   <<: *common
