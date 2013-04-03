@@ -15,10 +15,3 @@ test:
   <<: *common
   database: rsvp_test
 
-production:
-  <<: *common
-  database: rsvp_production
-
-edge:
-  <<: *common
-  database: rsvp_edge
