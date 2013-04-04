@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :party_id, :email
+  attr_accessible :first_name, :last_name, :party_id, :email, :attending, :message
 
   belongs_to :party
 
@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => {:message => 'Please enter your last name'}
   validates :email, :presence => {:message => 'Please enter your email'}
 
-  delegate :mailing_address, :city, :state, :zip, :party_size, :invitation_id,:rsvp, :message, :to => :party
+  delegate :mailing_address, :city, :state, :zip, :party_size, :invitation_id,:rsvp, :party_size, :to => :party
 
-  before_save :check_for_invitation
+  #before_save :check_for_invitation
 
   def check_for_invitation
 
