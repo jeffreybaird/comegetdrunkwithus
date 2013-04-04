@@ -7,7 +7,7 @@ Rsvp::Application.routes.draw do
   match '/'          => 'home#show'
   match '/home'      => 'home#show'
   match '/about-us'  => 'about_us#show'
-  match '/rsvps'     => 'rsvps#show'
+  match '/rsvps'     => 'users#show'
 
   resource :users
 
