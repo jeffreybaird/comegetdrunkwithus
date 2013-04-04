@@ -1,16 +1,11 @@
 class Party < ActiveRecord::Base
   attr_accessible :id, :party_name, :mailing_address, :city, :state, :zip, :reservation_id, :invitation_id
 
-  belongs_to :reservation
-  accepts_nested_attributes_for :reservation
-
+  has_one :reservation
   has_many :users
 
 
   #before_save :rsvp_to_boolean
-
-
-  delegate :party_size, :to => :reservation
 
   def rsvp_to_boolean
     if rsvp == 'Yes'

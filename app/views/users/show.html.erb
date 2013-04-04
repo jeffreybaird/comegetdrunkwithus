@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="span8 offset2">
-      <%= form_for :user do |f| %>
+      <%= form_for @user do |f| %>
         <div class="row">
         <fieldset>
 
@@ -58,7 +58,9 @@
           <div class="control-group">
             <div class="span3">
               <label for="party_size"><strong>If yes, how many will be in your party?</strong></label>
-                <%= f.text_field :party_size, :cols => 1, :class => 'span1' %>
+              <%= fields_for @user.party do |p| %>
+                <%= p.text_field :party_size, :cols => 1, :class => 'span1' %>
+              <% end %>
             </div>
           </div>
           </div>
@@ -66,7 +68,7 @@
           <div class="control-group span4">
             <label class="control-label" for="message"><strong>Message for the happy couple:</strong></label>
             <div class="controls">
-              <%= f.text_area :user, :rows => 6, :class => 'span4' %>
+              <%= f.text_area :message, :rows => 6, :class => 'span4' %>
             </div>
           </div>
 
