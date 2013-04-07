@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   belongs_to :party
   accepts_nested_attributes_for :party
 
-  #has_one :party
 
   validates :first_name, :presence => {:message => 'Please enter your first name'}
   validates :last_name, :presence => {:message => 'Please enter your last name'}
