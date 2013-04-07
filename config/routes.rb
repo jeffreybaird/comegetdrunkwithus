@@ -11,9 +11,8 @@ Rsvp::Application.routes.draw do
   match '/home'      => 'home#show'
   match '/about-us'  => 'about_us#show'
   match '/rsvps'     => 'users#show'
+  match '/admin'     => 'admin/dashboard#index'
 
   resource :users
 
-
-   #get '/dashboard/about_your_todo_list', :to => "dashboard#about_todo_list", :as => "about_your_todo_list"
 end
