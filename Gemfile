@@ -28,6 +28,8 @@ gem 'jquery-rails'
 gem "formtastic", "~> 2.2"
 gem "formtastic-plus-bootstrap"
 gem 'activeadmin'
+gem 'shoulda'
+gem 'shoulda-matchers'
 
 
 
