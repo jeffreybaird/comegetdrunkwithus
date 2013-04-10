@@ -6,16 +6,16 @@ class UserTest < ActiveSupport::TestCase
 
   should "that the user matches an invitation if an invitation exists" do
 
-      @invitation = Invitation.new(:first_name => "Jeff", :email => "jlbaird87@gmail.com")
+      invitation = Invitation.new(:first_name => "Jeff", :email => "jlbaird87@gmail.com", :last_name => "Baird")
 
-      @invitation.save
+      invitation.save
 
-      @party = Party.new(:id => 1, :party_name => "Baird")
-      @user = User.new(:id => 1, :first_name => "Jeff", :last_name => "Baird", :email => "jlbaird87@gmail.com", :party_id => @party.id)
-      @user.party = @party
+      party = Party.new(:id => 1, :party_name => "Baird")
+      user = User.new(:id => 1, :first_name => "Jeff", :last_name => "Baird", :email => "jlbaird87@gmail.com", :party_id => party.id)
+      user.party = party
 
-      assert @user.check_for_invitation
-      assert_equal @invitation.id, @user.party.invitation.id
+      assert user.check_for_invitation
+      assert_equal invitation.id, user.party.invitation.id
 
     end
 
