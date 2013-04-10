@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore sample sensitive data
+
+/doc/test_invite_list.csv
