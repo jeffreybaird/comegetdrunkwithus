@@ -14,26 +14,8 @@
  *= require_tree .
  */
 
-.registries h2 {
-  color: #666666;
-  text-align: center;
-  text-decoration: none;
-}
-
-.registries h2:hover {
-  color: #817c99;
-}
-
-.registries p {
-  margin-bottom: 30px;
-}
-
 .rsvp  {
   text-align: center;
-}
-
-#story h1 {
-  text-align: right;
 }
 
 .textBox {
@@ -43,7 +25,7 @@
   border-radius: 6px;
 }
 
-.textBox p {  
+.textBox p {
   margin: 15px;
   font-size: 1.3em;
   line-height: 1.4em;
