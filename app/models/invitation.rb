@@ -5,4 +5,6 @@ class Invitation < ActiveRecord::Base
     "Name: #{last_name}, Id: #{id}"
   end
 
+
+
 end
