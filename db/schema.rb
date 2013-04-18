@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409170040) do
+ActiveRecord::Schema.define(:version => 20130414013304) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,27 +49,29 @@ ActiveRecord::Schema.define(:version => 20130409170040) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "mailing_address"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.integer  "party_id"
     t.integer  "party_size"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "address1"
+    t.string   "address2"
   end
 
   create_table "parties", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "party_name"
-    t.string   "mailing_address"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.integer  "reservation_id"
     t.integer  "invitation_id"
     t.integer  "party_size"
+    t.string   "address1"
+    t.string   "address2"
   end
 
   create_table "reservations", :force => true do |t|

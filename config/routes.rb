@@ -12,7 +12,9 @@ Rsvp::Application.routes.draw do
   match '/about-us'  => 'about_us#show'
   match '/rsvps'     => 'users#show'
   match '/admin'     => 'admin/dashboard#index'
+  match '/admin/invitations/new' => 'admin/invitations#upload'
 
   resource :users
+  resource :invitations
 
 end

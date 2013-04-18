@@ -1,6 +1,6 @@
 require 'csv'
 
-class Uploader
+module Uploader
 
   LastNameIndex  = 0
   FirstNameIndex = 1
@@ -14,15 +14,22 @@ class Uploader
 
 
   def self.create_invites(file)
-    CSV.foreach(file) do |row|
-      Invitation.create!(:last_name => row[LastNameIndex],
-                     :first_name => row[FirstNameIndex],
-                     :email => row[EmailIndex],
-                     :mailing_address => row[Address1Index],
-                     :state => row[StateIndex],
-                     :city => row[CityIndex],
-                     :zip => row[ZipIndex],
-                     :party_size => row[PartyIndex])
+    row = Array.new
+
+    CSV.foreach(file) do |entry|
+      row << entry
     end
+
+    row = row.flatten
+
+    Invitation.create!({:last_name => row[LastNameIndex],
+                       :first_name => row[FirstNameIndex],
+                       :email => row[EmailIndex],
+                       :address1 => row[Address1Index],
+                       :address2 => row[Address2Index],
+                       :state => row[StateIndex],
+                       :city => row[CityIndex],
+                       :zip => row[ZipIndex],
+                       :party_size => row[PartyIndex]})
   end
 end

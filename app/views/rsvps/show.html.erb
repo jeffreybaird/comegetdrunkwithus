@@ -10,7 +10,7 @@
   <address>
     <% @user = User.find(12) %>
     <%= "#{@user.first_name} #{@user.last_name}" %><br>
-    <%= "#{@user.mailing_address}" %><br>
+    <%= "#{@user.address1}" %><br>
     <%= "#{@user.city}, #{@user.state} #{@user.zip}" %><br>
   </address>
 

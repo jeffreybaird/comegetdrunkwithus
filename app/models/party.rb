@@ -1,5 +1,5 @@
 class Party < ActiveRecord::Base
-  attr_accessible :id, :party_name, :mailing_address, :city, :state, :zip, :reservation_id, :party_size, :invitation_id, :invitation
+  attr_accessible :id, :party_name, :address1, :address2, :city, :state, :zip, :reservation_id, :party_size, :invitation_id, :invitation
 
   has_one :invitation
   has_one :reservation
