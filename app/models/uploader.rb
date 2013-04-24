@@ -14,15 +14,16 @@ module Uploader
 
 
   def self.create_invites(file)
-    row = Array.new
+    data = Array.new
 
     CSV.foreach(file) do |entry|
-      row << entry
+      data << entry
     end
 
-    row = row.flatten
 
-    Invitation.create!({:last_name => row[LastNameIndex],
+    data.each do |row|
+
+      Invitation.create({:last_name => row[LastNameIndex],
                        :first_name => row[FirstNameIndex],
                        :email => row[EmailIndex],
                        :address1 => row[Address1Index],
@@ -30,6 +31,7 @@ module Uploader
                        :state => row[StateIndex],
                        :city => row[CityIndex],
                        :zip => row[ZipIndex],
-                       :party_size => row[PartyIndex]})
+                       :party_size => row[PartyIndex]}) #rescue "an invitation with email: #{row[EmailIndex]} already exists"
+    end
   end
 end
